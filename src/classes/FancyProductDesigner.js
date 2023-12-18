@@ -2752,7 +2752,7 @@ export default class FancyProductDesigner extends EventTarget {
                         doc = new jspdf.jsPDF({ orientation: orien, unit: 'px', format: [viewWidth, viewHeight] })
                     }
 
-                    doc.addImage(dataURLs[i], 'PNG', 0, 0, doc.internal.pageSize.getWidth(), doc.internal.pageSize.getHeight());
+                    doc.addImage(dataURLs[i], 'PNG', 0, 0, doc.internal.pageSize.getWidth(), doc.internal.pageSize.getHeight(), '','FAST');
 
                 }
 
