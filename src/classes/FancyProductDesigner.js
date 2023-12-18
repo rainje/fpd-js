@@ -2755,7 +2755,7 @@ export default class FancyProductDesigner extends EventTarget {
                     doc.addImage(dataURLs[i], 'PNG', 0, 0, doc.internal.pageSize.getWidth(), doc.internal.pageSize.getHeight());
 
                 }
-                console.log(doc.output(type))
+                return doc.output(type)
             };
 
             if (jspdf)
