@@ -2727,7 +2727,7 @@ export default class FancyProductDesigner extends EventTarget {
 	 *
 	 * @returns {string} A string with all views as PDF.
 	 */
-	getViewsPDF (onlyCurrentView = false) {
+	getViewsPDF (type = "blob", onlyCurrentView = false) {
 
 		getScript(
             'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js',
@@ -2755,7 +2755,7 @@ export default class FancyProductDesigner extends EventTarget {
                     doc.addImage(dataURLs[i], 'PNG', 0, 0, doc.internal.pageSize.getWidth(), doc.internal.pageSize.getHeight());
 
                 }
-                return doc.output()
+                console.log(doc.output(type))
             };
 
             if (jspdf)
