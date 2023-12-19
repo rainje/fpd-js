@@ -2756,7 +2756,7 @@ export default class FancyProductDesigner extends EventTarget {
 
                 }
 
-                return doc.output(type);
+                doc.output(type);
 
             };
 
