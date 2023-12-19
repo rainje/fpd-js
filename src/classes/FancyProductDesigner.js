@@ -2756,7 +2756,10 @@ export default class FancyProductDesigner extends EventTarget {
 
                 }
 
-                doc.output(type);
+                var blobPDF =  new Blob([ doc.output() ], { type : 'application/pdf'});
+                var blobUrl = URL.createObjectURL(blobPDF);
+
+                return blobUrl;
 
             };
 
