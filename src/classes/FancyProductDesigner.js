@@ -2752,11 +2752,12 @@ export default class FancyProductDesigner extends EventTarget {
                         doc = new jspdf.jsPDF({ orientation: orien, unit: 'px', format: [viewWidth, viewHeight] })
                     }
 
-                    doc.addImage(dataURLs[i], 'PNG', 0, 0, doc.internal.pageSize.getWidth(), doc.internal.pageSize.getHeight(), '','FAST');
+                    doc.addImage(dataURLs[i], 'PNG', 0, 0, doc.internal.pageSize.getWidth(), doc.internal.pageSize.getHeight());
 
                 }
 
-                doc.output(type)
+                return doc.output(type);
+
             };
 
             if (jspdf)
@@ -2764,6 +2765,8 @@ export default class FancyProductDesigner extends EventTarget {
                     this.currentViewInstance.toDataURL(_createPDF, { format: 'png', watermarkImg: this.watermarkImg})
                     :
                     this.getViewsDataURL(_createPDF, { format: 'png' });
+
+
 
         })
 
